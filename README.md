@@ -50,6 +50,21 @@ TELEGRAM_BOT_TOKEN="<your bot token>" python3 monitor.py --dry-run
 
 This prints the notifications that would be sent without actually sending them.
 
+## Publish to GitHub
+
+The `deploy.sh` script prepares this repository and pushes it to GitHub.
+It requires a `GITHUB_TOKEN` environment variable and does not store the token in the repo.
+
+```bash
+export GITHUB_TOKEN="<your token>"
+./deploy.sh
+```
+
+## Railway Deployment
+
+This repo includes a GitHub Actions workflow at `.github/workflows/railway-deploy.yml`.
+Once you add `RAILWAY_TOKEN`, `TELEGRAM_BOT_TOKEN`, and `TELEGRAM_CHAT_ID` as GitHub secrets, every push to `main` will deploy the app to Railway.
+
 ## 24/7 Monitoring (macOS)
 
 To run the monitor continuously, a launchd service has been configured to check the website every 10 minutes.
