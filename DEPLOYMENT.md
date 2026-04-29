@@ -45,10 +45,18 @@ In Railway dashboard:
 1. Click on your project
 2. Go to "Variables" tab
 3. Add these environment variables:
-   - **TELEGRAM_BOT_TOKEN**: `8709174064:AAEmYg0RHtSZ2yPij_iFvk2cCADCN38u1pA`
+   - **TELEGRAM_BOT_TOKEN**: your Telegram bot token
    - **TELEGRAM_CHAT_ID**: `6611505561` (optional, has default)
 
 ## Step 5: Deploy
+
+Railway can also deploy directly from GitHub using the included workflow file:
+`.github/workflows/railway-deploy.yml`.
+Add a GitHub secret named `RAILWAY_TOKEN` in your repo settings to enable automatic deployment on every push to `main`.
+
+1. Railway will automatically deploy from your GitHub repo
+2. Go to "Deployments" tab
+3. You should see logs showing "Starting apartment monitor..."
 
 1. Railway will automatically deploy from your GitHub repo
 2. Go to "Deployments" tab
